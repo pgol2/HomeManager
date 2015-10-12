@@ -10,16 +10,16 @@
 
         $scope.billsList = [
             {
-                name: "Prund",
-                cost: "800$"
+                title: "Prund",
+                value: "800$"
             }, {
-                name: "Wuda",
-                cost: "10.5$"
+                title: "Wuda",
+                value: "10.5$"
             }
         ];
 
         $scope.addBill = function(){
-                $scope.billsList.push({name: $scope.formBillName, cost: $scope.formBillCost + ".00 $"});
+                $scope.billsList.push({title: $scope.formBillTitle, value: $scope.formBillValue + ".00 $"});
         };
     }
 
