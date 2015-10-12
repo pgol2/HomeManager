@@ -1,2 +1,25 @@
-<h1>bills list</h1>
-<h2>{{test}}</h2>
+
+<ul class="bills-list">
+    <li ng-repeat="value in billsList">
+          {{ value.name }} - {{ value.cost }}
+    </li>
+</ul>
+
+<form class="form-inline">
+    <div class="form-group">
+        <label class="sr-only" for="exampleInputAmountName">Amount (in dollars)</label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="exampleInputAmountName" placeholder="Name of a bill" ng-model="formBillName" ng-model-instant>
+        </div>
+        <label class="sr-only" for="exampleInputAmountCost">Amount (in dollars)</label>
+        <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <input type="text" class="form-control" id="exampleInputAmountCost" placeholder="Cost" ng-model="formBillCost" ng-model-instant>
+            <div class="input-group-addon">.00</div>
+        </div>
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" ng-click="addBill()">Add a bill</button>
+</form>

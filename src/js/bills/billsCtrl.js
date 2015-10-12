@@ -7,6 +7,22 @@
 
     function billsCtrl($scope) {
         $scope.test = 'test';
+
+        $scope.billsList = [
+            {
+                name: "Prund",
+                cost: "800$"
+            }, {
+                name: "Wuda",
+                cost: "10.5$"
+            }
+        ];
+
+        $scope.addBill = function(){
+            if (!isNaN($scope.formBillCost) && $scope.formBillName) {
+                $scope.billsList.push({name: $scope.formBillName, cost: $scope.formBillCost + ".00 $"});
+            }
+        };
     }
 
 

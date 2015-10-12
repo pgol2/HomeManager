@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body ng-app="app">
 
 <div class="container">
-    <a ui-sref="bills">da</a>
-    <div class="col-xs-10" ui-view>
-        viewsadsada
+    <div class="row">
+        <div class="col-xs-2">
+            <a ui-sref="bills" class="menu-item">
+                <span class="glyphicon glyphicon-bitcoin" aria-hidden="true"></span> Bills
+            </a>
+            <a ui-sref="cleaning" class="menu-item">
+                <span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Cleaning
+            </a>
+            <a ui-sref="todo" class="menu-item">
+                <span class="glyphicon glyphicon-alert" aria-hidden="true"></span> To-do list
+            </a>
+            <a ui-sref="toeat" class="menu-item">
+                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> To-eat list
+            </a>
+        </div>
+        <div class="col-xs-10" ui-view>
+            viewsadsada
+        </div>
     </div>
 </div>
 
