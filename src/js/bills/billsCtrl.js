@@ -19,9 +19,7 @@
         ];
 
         $scope.addBill = function(){
-            if (!isNaN($scope.formBillCost) && $scope.formBillName) {
                 $scope.billsList.push({name: $scope.formBillName, cost: $scope.formBillCost + ".00 $"});
-            }
         };
     }
 
