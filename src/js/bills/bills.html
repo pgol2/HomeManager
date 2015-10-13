@@ -1,7 +1,6 @@
-
 <ul class="bills-list">
     <li ng-repeat="item in billsList">
-          {{ item.title }} - {{ item.value }}
+        {{ item.title }} - {{ item.value }}$
     </li>
 </ul>
 
@@ -9,38 +8,40 @@
     <div class="form-group">
 
         <label class="sr-only">Amount (in dollars)</label>
+
         <div class="input-group">
             <input type="text"
                    class="form-control"
                    placeholder="Name of a bill"
-                   ng-model="formBillTitle"
+                   ng-model="formSend.title"
                    ng-minlength="2"
                    required
                     />
         </div>
 
-
         <label class="sr-only">Amount (in dollars)</label>
+
         <div class="input-group">
             <div class="input-group-addon">$</div>
             <input type="number"
                    class="form-control"
                    placeholder="Cost"
-                   ng-model="formBillValue"
+                   ng-model="formSend.value"
                    required
                     />
+
             <div class="input-group-addon">.00</div>
         </div>
-
+    <pre>{{ billsList | json }}</pre>
     </div>
-
 
     <button
             type="submit"
             class="btn btn-primary"
-            ng-click="addBill()"
+            ng-click="postBill()"
             ng-disabled="frm.$invalid"
             >
         Add a bill
     </button>
+    <h2 class="hint" name="err" ng-show="frm.$pristine">Wpisz dane</h2>
 </form>
