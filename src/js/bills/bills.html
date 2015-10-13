@@ -5,21 +5,42 @@
     </li>
 </ul>
 
-<form class="form-inline">
+<form name="frm" class="form-inline">
     <div class="form-group">
-        <label class="sr-only" for="exampleInputAmountTitle">Amount (in dollars)</label>
+
+        <label class="sr-only">Amount (in dollars)</label>
         <div class="input-group">
-            <input type="text" class="form-control" id="exampleInputAmountTitle" placeholder="Name of a bill" ng-model="formBillTitle">
+            <input type="text"
+                   class="form-control"
+                   placeholder="Name of a bill"
+                   ng-model="formBillTitle"
+                   ng-minlength="2"
+                   required
+                    />
         </div>
-        <label class="sr-only" for="exampleInputAmountValue">Amount (in dollars)</label>
+
+
+        <label class="sr-only">Amount (in dollars)</label>
         <div class="input-group">
             <div class="input-group-addon">$</div>
-            <input type="number" class="form-control" id="exampleInputAmountValue" placeholder="Cost" ng-model="formBillValue">
+            <input type="number"
+                   class="form-control"
+                   placeholder="Cost"
+                   ng-model="formBillValue"
+                   required
+                    />
             <div class="input-group-addon">.00</div>
         </div>
 
     </div>
 
 
-    <button type="submit" class="btn btn-primary" ng-click="addBill()">Add a bill</button>
+    <button
+            type="submit"
+            class="btn btn-primary"
+            ng-click="addBill()"
+            ng-disabled="frm.$invalid"
+            >
+        Add a bill
+    </button>
 </form>

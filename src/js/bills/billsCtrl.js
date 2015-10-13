@@ -18,8 +18,10 @@
             }
         ];
 
-        $scope.addBill = function(){
-                $scope.billsList.push({title: $scope.formBillTitle, value: $scope.formBillValue + ".00 $"});
+        $scope.addBill = function () {
+            $scope.billsList.push({title: $scope.formBillTitle, value: $scope.formBillValue + ".00 $"});
+            $scope.formBillTitle = "";
+            $scope.formBillValue = "";
         };
     }
 
