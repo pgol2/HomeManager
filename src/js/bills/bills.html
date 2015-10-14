@@ -1,25 +1,47 @@
-
 <ul class="bills-list">
-    <li ng-repeat="value in billsList">
-          {{ value.name }} - {{ value.cost }}
+    <li ng-repeat="item in billsList">
+        {{ item.title }} - {{ item.value }}$
     </li>
 </ul>
 
-<form class="form-inline">
+<form name="frm" class="form-inline">
     <div class="form-group">
-        <label class="sr-only" for="exampleInputAmountName">Amount (in dollars)</label>
+
+        <label class="sr-only">Amount (in dollars)</label>
+
         <div class="input-group">
-            <input type="text" class="form-control" id="exampleInputAmountName" placeholder="Name of a bill" ng-model="formBillName" ng-model-instant>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Name of a bill"
+                   ng-model="formSend.title"
+                   ng-minlength="2"
+                   required
+                    />
         </div>
-        <label class="sr-only" for="exampleInputAmountCost">Amount (in dollars)</label>
+
+        <label class="sr-only">Amount (in dollars)</label>
+
         <div class="input-group">
             <div class="input-group-addon">$</div>
-            <input type="text" class="form-control" id="exampleInputAmountCost" placeholder="Cost" ng-model="formBillCost" ng-model-instant>
+            <input type="number"
+                   class="form-control"
+                   placeholder="Cost"
+                   ng-model="formSend.value"
+                   required
+                    />
+
             <div class="input-group-addon">.00</div>
         </div>
-
+    <pre>{{ billsList | json }}</pre>
     </div>
 
-
-    <button type="submit" class="btn btn-primary" ng-click="addBill()">Add a bill</button>
+    <button
+            type="submit"
+            class="btn btn-primary"
+            ng-click="postBill()"
+            ng-disabled="frm.$invalid"
+            >
+        Add a bill
+    </button>
+    <h2 class="hint" name="err" ng-show="frm.$pristine">Wpisz dane</h2>
 </form>

@@ -5,23 +5,35 @@
         .module('bills')
         .controller('billsCtrl', billsCtrl);
 
-    function billsCtrl($scope) {
+    function billsCtrl($scope, $http) {
         $scope.test = 'test';
 
         $scope.billsList = [
             {
-                name: "Prund",
-                cost: "800$"
+                title: "Prad",
+                value: "800"
             }, {
-                name: "Wuda",
-                cost: "10.5$"
+                title: "Woda",
+                value: "10.5"
             }
         ];
 
-        $scope.addBill = function(){
-            if (!isNaN($scope.formBillCost) && $scope.formBillName) {
-                $scope.billsList.push({name: $scope.formBillName, cost: $scope.formBillCost + ".00 $"});
-            }
+        var emptyForm = function(){
+            return {
+                title: "",
+                value: ""
+            };
+        };
+
+        $scope.formSend = emptyForm();
+
+        $scope.addBill = function () {
+            $scope.billsList.push($scope.formSend);
+            $scope.formSend = emptyForm();
+        };
+
+        $scope.postBill = function(){
+            $http.post('https://homemanager.herokuapp.com/api/expenses', $scope.formSend).then($scope.addBill);
         };
     }
 
