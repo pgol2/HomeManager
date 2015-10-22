@@ -5,7 +5,7 @@
         .module('bills')
         .controller('billsCtrl', billsCtrl);
 
-    function billsCtrl($scope, $http) {
+    function billsCtrl($scope, $http, Bills) {
         $scope.test = 'test';
 
         $scope.billsList = [
@@ -24,7 +24,7 @@
             }
         ];
 
-        var emptyForm = function(){
+        var emptyForm = function() {
             return {
                 title: "",
                 category: "",
@@ -45,6 +45,8 @@
 
 
         };
+
+
 
         $scope.postBill = function(){
             $http.post('https://homemanager.herokuapp.com/api/expenses', $scope.formSend).then($scope.addBill, $scope.errorBill);

@@ -2,10 +2,10 @@
 
 
     angular
-        .module('common')
-        .factory('common', common);
+        .module('common', [])
+        .factory('Bills', common);
 
-    var common = function(){
+    function common(){
 
         var addListItem = function(){
 
@@ -19,8 +19,10 @@
 
         };
 
-       $scope.showMe = true;
-    };
 
+        return {
+          addListItem: addListItem
+        };
+    };
 
 }());
