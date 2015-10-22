@@ -24,21 +24,12 @@
             }
         ];
 
-        var emptyForm = function() {
-            return {
-                title: "",
-                category: "",
-                creator: "",
-                created: "",
-                value: ""
-            };
-        };
 
-        $scope.formSend = emptyForm();
+        $scope.formSend = Bills.emptyForm();
 
         $scope.addBill = function () {
             $scope.billsList.push($scope.formSend);
-            $scope.formSend = emptyForm();
+            $scope.formSend = Bills.emptyForm();
         };
 
         $scope.errorBill = function() {

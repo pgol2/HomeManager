@@ -19,10 +19,20 @@
 
         };
 
+        var emptyForm = function() {
+            return {
+                title: "",
+                category: "",
+                creator: "",
+                created: "",
+                value: ""
+            };
+        };
+
 
         return {
-          addListItem: addListItem
+          emptyForm: emptyForm
         };
-    };
+    }
 
 }());
