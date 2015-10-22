@@ -7,6 +7,17 @@
 <form name="frm" class="form-inline">
     <div class="form-group">
 
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">Drafts</a></li>
+                <li><a href="#">Sent Items</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Trash</a></li>
+            </ul>
+        </li>
+
         <label class="sr-only">Amount (in dollars)</label>
 
         <div class="input-group">
@@ -29,10 +40,16 @@
                    ng-model="formSend.value"
                    required
                     />
-
-            <div class="input-group-addon">.00</div>
         </div>
-    <pre>{{ billsList | json }}</pre>
+        <br/>
+        <ul class="dropdown-menu">
+            <li>Rachunki</li>
+            <li>Chemia</li>
+            <li>Inne</li>
+        </ul>
+
+
+
     </div>
 
     <button
@@ -44,4 +61,6 @@
         Add a bill
     </button>
     <h2 class="hint" name="err" ng-show="frm.$pristine">Wpisz dane</h2>
+
+    <h2 ng-show="showMe">Jestem!</h2>
 </form>
