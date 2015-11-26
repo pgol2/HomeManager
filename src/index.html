@@ -5,37 +5,68 @@
     <title></title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
-
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-light_blue.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body ng-app="app">
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-2">
-            <a ui-sref="bills" class="menu-item">
-                <span class="glyphicon glyphicon-bitcoin" aria-hidden="true"></span> Bills
-            </a>
-            <a ui-sref="cleaning" class="menu-item">
-                <span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Cleaning
-            </a>
-            <a ui-sref="todo" class="menu-item">
-                <span class="glyphicon glyphicon-alert" aria-hidden="true"></span> To-do list
-            </a>
-            <a ui-sref="toeat" class="menu-item">
-                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> To-eat list
-            </a>
-        </div>
-        <div class="col-xs-10" ui-view>
+<!-- Simple header with scrollable tabs. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
 
+            <span class="mdl-layout-title">Home Manager</span>
         </div>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+            <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Rachunki</a>
+            <a href="#scroll-tab-2" class="mdl-layout__tab">Sprzątanie</a>
+            <a href="#scroll-tab-3" class="mdl-layout__tab">Żarełko</a>
+            <a href="#scroll-tab-4" class="mdl-layout__tab">Lista zakupów</a>
+            <a href="#scroll-tab-5" class="mdl-layout__tab">Obiady</a>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
     </div>
+    <main class="mdl-layout__content">
+        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+            <div class="page-content">
+                <div  class="ngS"ui-view>
+
+                </div>
+            </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+            <div class="page-content"><!-- Your content goes here --></div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-3">
+            <div class="page-content"><!-- Your content goes here --></div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-4">
+            <div class="page-content"><!-- Your content goes here --></div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-5">
+            <div class="page-content"><!-- Your content goes here --></div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-6">
+            <div class="page-content"><!-- Your content goes here --></div>
+        </section>
+    </main>
+
+
+
 </div>
+
+
+
 
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+
 
 <script src="js/main.js"></script>
 <script src="js/bills/bills.js"></script>

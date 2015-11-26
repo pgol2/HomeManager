@@ -1,60 +1,63 @@
 <ul class="bills-list">
-    <li ng-repeat="item in billsList">
-        {{ item.title }} - {{ item.value }}zł
-    </li>
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" align="center">
+        <thead>
+        <tr>
+            <th class="mdl-data-table__cell--non-numeric">Nazwa rachunku</th>
+            <th>Kwota</th>
+            <th>Osoba</th>
+            <th>Data utworzenia</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in billsList">
+            <td class="mdl-data-table__cell--non-numeric" >{{ item.title }}</td>
+            <td>{{ item.creator}}</td>
+            <td>{{ item.value }} zł</td>
+            <td>{{ item.created}}</td>
+
+        </tr>
+
+        </tbody>
+    </table>
 </ul>
 
 <form name="frm" class="form-inline">
     <div class="form-group">
 
-        <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Inbox</a></li>
-                    <li><a href="#">Drafts</a></li>
-                    <li><a href="#">Sent Items</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Trash</a></li>
-                </ul>
-        </li>
-
-        <label class="sr-only">Amount (in dollars)</label>
-
-        <div class="input-group">
+        <label class="sr-only">Nazwa rachunku</label>
+        <div>
             <input type="text"
                    class="form-control"
-                   placeholder="Name of a bill"
+                   placeholder="Nazwa rachunku"
                    ng-model="formSend.title"
                    ng-minlength="2"
                    required
                     />
+
         </div>
-
-        <label class="sr-only">Kwota (w złotówkach)</label>
-
-        <div class="input-group">
-            <input type="number"
-                   class="form-control"
-                   placeholder="Cost"
-                   ng-model="formSend.value"
-                   required
-                    />
-            <div class="input-group-addon">zł</div>
-        </div>
-
-
 
     </div>
 
-    <button
-            type="submit"
-            class="btn btn-primary"
-            ng-click="postBill()"
-            ng-disabled="frm.$invalid"
-            >
-        Add a bill
-    </button>
-    <h2 class="hint" name="err" ng-show="frm.$pristine">Wpisz dane</h2>
+    <div class="form-group">
+        <input type="number"
+               class="form-control"
+               placeholder="Wartość"
+               ng-model="formSend.value"
+               required
+                />
+    </div>
 
-    <h2 ng-show="showMe">Jestem!</h2>
+    <button class="mdl-button mdl-js-button mdl-button--primary"
+            type="submit"
+            ng-click="postBill()"
+            ng-disabled="frm.$invalid">
+        Dodaj
+    </button>
+    <div class="hint" name="err" ng-show="frm.$pristine">Wpisz dane</div>
+
+
 </form>
+
+
+
+

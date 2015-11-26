@@ -24,20 +24,20 @@
             }
         ];
 
-
         $scope.formSend = Bills.emptyForm();
 
         $scope.addBill = function () {
+            var date = new Date();
+            $scope.formSend.creator = "Ja";
+            $scope.formSend.created = date.getDay() + "/" + date.getDate() + "/" + date.getFullYear();
             $scope.billsList.push($scope.formSend);
             $scope.formSend = Bills.emptyForm();
+            //Pobranie nowej formy, nie wysylanie 
         };
 
         $scope.errorBill = function() {
 
-
         };
-
-
 
         $scope.postBill = function(){
             $http.post('https://homemanager.herokuapp.com/api/expenses', $scope.formSend).then($scope.addBill, $scope.errorBill);
