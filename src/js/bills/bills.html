@@ -1,6 +1,6 @@
 <ul class="bills-list">
     <li ng-repeat="item in billsList">
-        {{ item.title }} - {{ item.value }}$
+        {{ item.title }} - {{ item.value }}zł
     </li>
 </ul>
 
@@ -9,13 +9,13 @@
 
         <li class="dropdown">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">Drafts</a></li>
-                <li><a href="#">Sent Items</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Trash</a></li>
-            </ul>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Inbox</a></li>
+                    <li><a href="#">Drafts</a></li>
+                    <li><a href="#">Sent Items</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Trash</a></li>
+                </ul>
         </li>
 
         <label class="sr-only">Amount (in dollars)</label>
@@ -30,16 +30,16 @@
                     />
         </div>
 
-        <label class="sr-only">Amount (in dollars)</label>
+        <label class="sr-only">Kwota (w złotówkach)</label>
 
         <div class="input-group">
-            <div class="input-group-addon">$</div>
             <input type="number"
                    class="form-control"
                    placeholder="Cost"
                    ng-model="formSend.value"
                    required
                     />
+            <div class="input-group-addon">zł</div>
         </div>
 
 
