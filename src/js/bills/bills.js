@@ -5,7 +5,7 @@
         .module('bills', ['ui.router', 'common'])
         .config(function ($stateProvider) {
             $stateProvider.state('bills', {
-                url: '/',
+                url: '/bills',
                 templateUrl: 'js/bills/bills.html',
                 controller: 'billsCtrl'
             });

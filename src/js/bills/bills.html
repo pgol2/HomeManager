@@ -1,11 +1,12 @@
 <div>
     <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" align="center">
-        <thead>
-        <tr>
-            <th>
-                <a ng-repeat="category in categories" class="mdl-navigation__link" ng-click="setCurrentCategory(category)">{{ category }} </a>
-            </th>
-        </tr>
+
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" ng-repeat="category in categories" ng-click="setCurrentCategory(category)">
+            {{ category }}
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" ng-click="setCurrentCategory('')">
+            Reset
+        </button>
 
     <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" align="center">
             <thead>
@@ -14,15 +15,15 @@
                 <th class="mdl-data-table__cell--non-numeric">Osoba</th>
                 <th class="mdl-data-table__cell--non-numeric">Kwota</th>
                 <th class="mdl-data-table__cell--non-numeric">Data utworzenia</th>
-                <th class="mdl-data-table__cell--non-numeric"> <a class="mdl-navigation__link" ng-click="setCurrentCategory('Rachunki')"> Kategoria </a> </th>
+                <th class="mdl-data-table__cell--non-numeric"> <a class="mdl-navigation__link" ng-click="setCurrentCategory('')"> Kategoria </a> </th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="item in billsList | filter:{category:currentCategory}">
                 <td class="mdl-data-table__cell--non-numeric">{{ item.title }}</td>
                 <td class="mdl-data-table__cell--non-numeric">{{ item.creator}}</td>
-                <td class="mdl-data-table__cell--non-numeric">{{ item.value }} zł</td>
-                <td class="mdl-data-table__cell--non-numeric">{{ item.created}}</td>
+                <td class="mdl-data-table__cell">{{ item.value }} zł</td>
+                <td class="mdl-data-table__cell">{{ item.created | date: 'H:mm, dd.MM.yyyy'}}</td>
                 <td class="mdl-data-table__cell--non-numeric" ><a class="mdl-navigation__link" ng-click="setCurrentCategory(item.category)">{{ item.category }}</a></td>
             </tr>
 

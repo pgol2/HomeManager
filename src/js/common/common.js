@@ -20,7 +20,6 @@
                 title: "",
                 category: "",
                 creator: "",
-                created: "",
                 value: ""
             };
         };
