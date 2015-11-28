@@ -5,9 +5,9 @@
         .module('bills')
         .controller('billsCtrl', billsCtrl);
 
-    function billsCtrl($scope, $http, Bills) {
-        $scope.test = 'test';
 
+
+    function billsCtrl($scope, $http, Bills) {
         $scope.billsList = [
             {
                 title: "Prad",
@@ -24,19 +24,35 @@
             }
         ];
 
+        $scope.categories = ["Rachunki", "Żarełko", "Sprzątanie", "Lista zakupów"];
+
+
         $scope.formSend = Bills.emptyForm();
 
         $scope.addBill = function () {
             var date = new Date();
             $scope.formSend.creator = "Ja";
-            $scope.formSend.created = date.getDay() + "/" + date.getDate() + "/" + date.getFullYear();
             $scope.billsList.push($scope.formSend);
+            $scope.updateBill();        // Fix
             $scope.formSend = Bills.emptyForm();
-            //Pobranie nowej formy, nie wysylanie 
+        };
+        $scope.category = "Rachunki";
+        $scope.currentCategory = $scope.category;
+
+        function setCurrentCategory (category){
+            $scope.currentCategory = category;
+        }
+
+        $scope.setCurrentCategory = setCurrentCategory;
+
+
+        $scope.updateBill = function () {
+            $http.get('https://homemanager.herokuapp.com/api/expenses/:' + 0)       //Fix that shit (id what?)
+                .then(function(response){ $scope.billList[4] = response; }, function(){ $scope.billList[1] = {}; });
         };
 
         $scope.errorBill = function() {
-
+            console.log("Someting went wrong while posting a bill! Yikes!");
         };
 
         $scope.postBill = function(){

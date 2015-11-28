@@ -15,10 +15,6 @@
 
         };
 
-        var resetForm = function(){
-
-        };
-
         var emptyForm = function() {
             return {
                 title: "",

@@ -1,63 +1,69 @@
-<ul class="bills-list">
+<div>
     <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" align="center">
         <thead>
         <tr>
-            <th class="mdl-data-table__cell--non-numeric">Nazwa rachunku</th>
-            <th>Kwota</th>
-            <th>Osoba</th>
-            <th>Data utworzenia</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="item in billsList">
-            <td class="mdl-data-table__cell--non-numeric" >{{ item.title }}</td>
-            <td>{{ item.creator}}</td>
-            <td>{{ item.value }} zł</td>
-            <td>{{ item.created}}</td>
-
+            <th>
+                <a ng-repeat="category in categories" class="mdl-navigation__link" ng-click="setCurrentCategory(category)">{{ category }} </a>
+            </th>
         </tr>
 
-        </tbody>
-    </table>
-</ul>
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" align="center">
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">Nazwa rachunku</th>
+                <th class="mdl-data-table__cell--non-numeric">Osoba</th>
+                <th class="mdl-data-table__cell--non-numeric">Kwota</th>
+                <th class="mdl-data-table__cell--non-numeric">Data utworzenia</th>
+                <th class="mdl-data-table__cell--non-numeric"> <a class="mdl-navigation__link" ng-click="setCurrentCategory('Rachunki')"> Kategoria </a> </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in billsList | filter:{category:currentCategory}">
+                <td class="mdl-data-table__cell--non-numeric">{{ item.title }}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{ item.creator}}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{ item.value }} zł</td>
+                <td class="mdl-data-table__cell--non-numeric">{{ item.created}}</td>
+                <td class="mdl-data-table__cell--non-numeric" ><a class="mdl-navigation__link" ng-click="setCurrentCategory(item.category)">{{ item.category }}</a></td>
+            </tr>
 
-<form name="frm" class="form-inline">
-    <div class="form-group">
+            </tbody>
+        </table>
 
-        <label class="sr-only">Nazwa rachunku</label>
-        <div>
-            <input type="text"
-                   class="form-control"
-                   placeholder="Nazwa rachunku"
-                   ng-model="formSend.title"
-                   ng-minlength="2"
-                   required
-                    />
+    <form name="frm" class="form-inline">
+        <div class="form-group">
+
+            <label class="sr-only">Nazwa rachunku</label>
+            <div>
+                <input type="text"
+                       class="form-control"
+                       placeholder="Nazwa rachunku"
+                       ng-model="formSend.title"
+                       ng-minlength="2"
+                       required
+                        />
+
+            </div>
 
         </div>
 
-    </div>
+        <div class="form-group">
+            <input type="number"
+                   class="form-control"
+                   placeholder="Wartość"
+                   ng-model="formSend.value"
+                   required
+                    />
+        </div>
 
-    <div class="form-group">
-        <input type="number"
-               class="form-control"
-               placeholder="Wartość"
-               ng-model="formSend.value"
-               required
-                />
-    </div>
-
-    <button class="mdl-button mdl-js-button mdl-button--primary"
-            type="submit"
-            ng-click="postBill()"
-            ng-disabled="frm.$invalid">
-        Dodaj
-    </button>
-    <div class="hint" name="err" ng-show="frm.$pristine">Wpisz dane</div>
+        <button class="mdl-button mdl-button--accent"
+                type="submit"
+                ng-click="postBill()"
+                ng-disabled="frm.$invalid">
+            dodaj
+        </button>
+        <div class="hint" name="err" ng-show="frm.$pristine">Wpisz dane</div>
 
 
-</form>
+    </form>
 
-
-
-
+</div>

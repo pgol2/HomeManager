@@ -10,56 +10,33 @@
 </head>
 <body ng-app="app">
 
-<!-- Simple header with scrollable tabs. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            mdl-layout--fixed-header">
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-
-            <span class="mdl-layout-title">Home Manager</span>
-        </div>
-        <!-- Tabs -->
-        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-            <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Rachunki</a>
-            <a href="#scroll-tab-2" class="mdl-layout__tab">Sprzątanie</a>
-            <a href="#scroll-tab-3" class="mdl-layout__tab">Żarełko</a>
-            <a href="#scroll-tab-4" class="mdl-layout__tab">Lista zakupów</a>
-            <a href="#scroll-tab-5" class="mdl-layout__tab">Obiady</a>
+            <div class="mdl-layout-spacer"></div>
         </div>
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">HomeManager</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#/">Rachunki</a>
+            <a class="mdl-navigation__link" href="#/Foodie">Żarełko</a>
+            <a class="mdl-navigation__link" href="">Sprzątanie</a>
+            <a class="mdl-navigation__link" href="">Lista zakupów</a>
+        </nav>
     </div>
     <main class="mdl-layout__content">
-        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
-            <div class="page-content">
-                <div  class="ngS"ui-view>
+        <div class="page-content">
 
-                </div>
+            <div class="ngS" ui-view>
+
             </div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
-            <div class="page-content"><!-- Your content goes here --></div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="scroll-tab-3">
-            <div class="page-content"><!-- Your content goes here --></div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="scroll-tab-4">
-            <div class="page-content"><!-- Your content goes here --></div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="scroll-tab-5">
-            <div class="page-content"><!-- Your content goes here --></div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="scroll-tab-6">
-            <div class="page-content"><!-- Your content goes here --></div>
-        </section>
+        </div>
     </main>
-
-
-
 </div>
-
-
-
 
 
 <script src="bower_components/angular/angular.js"></script>
