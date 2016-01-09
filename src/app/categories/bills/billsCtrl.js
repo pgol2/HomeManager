@@ -8,7 +8,7 @@
         $scope.billsList = [];
         $scope.categories = ["Rachunki", "Żarełko", "Sprzątanie", "Lista zakupów"];
         $scope.formSend = Bills.emptyForm();
-        $scope.category = "Rachunki";
+        $scope.category = "Inne";
 
         $scope.currentCategory = $scope.category;
         function setCurrentCategory (category){

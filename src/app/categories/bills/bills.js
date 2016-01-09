@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('bills', ['ui.router', 'common'])
+        .module('bills', ['common', 'ui.router'])
         .config(function ($stateProvider) {
             $stateProvider.state('bills', {
                 url: '/bills',
-                templateUrl: 'js/bills/bills.html',
+                templateUrl: 'app/categories/bills/bills.html',
                 controller: 'billsCtrl'
             });
         });

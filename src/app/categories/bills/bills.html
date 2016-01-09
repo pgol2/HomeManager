@@ -23,7 +23,7 @@
                 <td class="mdl-data-table__cell--non-numeric">{{ item.title }}</td>
                 <td class="mdl-data-table__cell--non-numeric">{{ item.creator}}</td>
                 <td class="mdl-data-table__cell">{{ item.value }} zł</td>
-                <td class="mdl-data-table__cell">{{ item.created | date: 'H:mm, dd.MM.yyyy'}}</td>
+                <td class="mdl-data-table__cell">{{ item.created | date: 'dd.MM.yyyy'}}</td>
                 <td class="mdl-data-table__cell--non-numeric" ><a class="mdl-navigation__link" ng-click="setCurrentCategory(item.category)">{{ item.category }}</a></td>
             </tr>
 

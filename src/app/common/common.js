@@ -18,7 +18,7 @@
         var emptyForm = function() {
             return {
                 title: "",
-                category: "",
+                category: "Inne",
                 creator: "",
                 value: ""
             };
