@@ -2,6 +2,10 @@
     'use strict';
 
     angular
-        .module('app', ['ui.router','bills'])
+        .module('homeApp', [
+            'ui.router',
+            'categories',
+            'categories.bills'
+        ])
 
 })();

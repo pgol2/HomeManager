@@ -1,0 +1,1 @@
+angular.module('categories.bills.edit', []);

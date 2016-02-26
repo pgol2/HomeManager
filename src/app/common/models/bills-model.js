@@ -1,7 +1,2 @@
-angular.module('homeApp.models.bills', [])
-    .service('BillsModel', function(){
-
-        
-
-    })
-;
+angular
+    .module('homeApp.models.bills', []);

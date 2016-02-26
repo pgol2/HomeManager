@@ -5,22 +5,20 @@
     <title></title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-deep_purple.min.css" />
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.light_blue-blue.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body ng-app="app">
+<body ng-app="homeApp">
 
-<!-- The drawer is always open in large screens. The header is always shown,
-  even in small screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
-            mdl-layout--fixed-header">
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-            <div class="mdl-layout-spacer"></div>
+            <div class="mdl-layout-spacer">HomeManager</div>
         </div>
     </header>
-    <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">HomeManager</span>
+    <div class="mdl-layout__drawer">\
+        <span class="mdl-layout-title">Kategorie</span>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="#/bills">Rachunki</a>
             <a class="mdl-navigation__link" href="#/foodie">Żarełko</a>
@@ -44,10 +42,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 
-
-<script src="app/main.js"></script>
+<script src="app/categories/bills/create/bills-create.js"></script>
+<script src="app/categories/bills/edit/bills-edit.js"></script>
 <script src="app/categories/bills/bills.js"></script>
 <script src="app/categories/bills/billsCtrl.js"></script>
+<script src="app/categories/categories.js"></script>
+<script src="app/common/models/bills-model.js"></script>
+<script src="app/common/models/categories-model.js"></script>
 <script src="app/common/common.js"></script>
+<script src="app/main.js"></script>
+
 </body>
 </html>

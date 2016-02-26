@@ -1,0 +1,1 @@
+angular.module('homeApp.model.categories', []);
