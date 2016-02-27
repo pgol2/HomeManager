@@ -1,4 +1,4 @@
-(function(){
+(function () {
 
 
     angular
@@ -6,15 +6,6 @@
         .factory('Bills', common);
 
     function common(){
-
-        var addListItem = function(){
-
-        };
-
-        var postList = function(){
-
-        };
-
         var emptyForm = function() {
             return {
                 title: "",
@@ -24,10 +15,9 @@
             };
         };
 
-
         return {
-          emptyForm: emptyForm
-        };
-    }
+            emptyForm: emptyForm
+        }
+    };
 
 }());

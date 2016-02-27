@@ -4,7 +4,7 @@
     angular
         .module('categories.bills')
         .controller('billsCtrl', billsCtrl);
-    function billsCtrl($scope, $http, Bills) {
+    function billsCtrl($scope, $http, Bills, Bills1) {
         $scope.billsList = [];
         $scope.categories = ["Rachunki", "Żarełko", "Sprzątanie", "Lista zakupów"];
         $scope.formSend = Bills.emptyForm();

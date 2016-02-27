@@ -4,6 +4,7 @@
     angular
         .module('categories.bills', [
             'common',
+            'homeApp',
             'ui.router'
         ])
         .config(function ($stateProvider) {
