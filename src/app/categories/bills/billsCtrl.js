@@ -4,9 +4,9 @@
     angular
         .module('categories.bills')
         .controller('billsCtrl', billsCtrl);
-    function billsCtrl($scope, $http, Bills, Bills1) {
-        $scope.billsList = [];
-        $scope.categories = ["Rachunki", "Żarełko", "Sprzątanie", "Lista zakupów"];
+    function billsCtrl($scope, $http, Bills) {
+        $scope.billsList = Bills.billsList;
+        $scope.categories = Bills.categories;
         $scope.formSend = Bills.emptyForm();
         $scope.category = "";
         $scope.editing = 0;

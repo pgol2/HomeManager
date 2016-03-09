@@ -3,7 +3,7 @@
 
     angular
         .module('common', [])
-        .factory('Bills', common);
+        .factory('BillsOld', common);
 
     function common(){
         var emptyForm = function() {

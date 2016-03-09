@@ -3,8 +3,7 @@
 
     angular
         .module('categories.bills', [
-            'common',
-            'homeApp',
+            'homeApp.model.bills',
             'ui.router'
         ])
         .config(function ($stateProvider) {
